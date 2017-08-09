@@ -1,0 +1,5 @@
+<h1 style="color:red"> #<%= @task.id %> <%= @task.name.upcase %></h1>
+<h2> <small>Doer :</small>  <%= @task.doer %></h2>
+<h2> <small>Priority  :</small><%= @task.priority %></h2>
+<h2> <small>Due Date </small> :<%= @task.duedate %></h2>
+<p><%= link_to "back to tasks", tasks_path %></p>

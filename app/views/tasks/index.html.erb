@@ -1,0 +1,56 @@
+<h1>List of all tasks</h1>
+
+<button class="create"> <%= link_to "create new task", new_task_path %> </button>
+
+<div>
+  <table>
+    <thead>
+      <td>name</td>
+      <td>doer</td>
+      <td>duedate # prio</td>
+      <td>actions</td>
+    </thead>
+    <% @tasks.each do |task| %>
+    <tr>
+      <td>
+        <p style="font-style:bold; font-size:18px"><%= task.id %># <%= task.name.upcase %>  </p>
+      </td>
+      <td>
+       <strong style="color:red"> <%= task.doer %> </strong>
+     </td>
+     <td>
+      <%= task.duedate %> # <%= task.priority %>
+    </td>
+    <td>
+      <button> <%= link_to "more details", task_path(task) %> </button>
+      <button> <%= link_to "update", edit_task_path(task) %> </button>
+      <button> <%= link_to "delete", task_path(task), method: :delete, data: {confirm: "Are you sure ?"}  %></button>
+    </td>
+  </tr>
+  <% end %>
+</table>
+</div>
+
+<style>
+  td {
+    border:1px solid black;
+    padding: 10px;
+  }
+  .create {
+    background-color: #5C7FA7;
+    border-radius: 50%;
+    width:100px;
+    height: 100px;
+    color: white;
+    margin-bottom:30px;
+  }
+  .create a {
+    font-size:18px;
+    color:white;
+    text-decoration: none
+  }
+</style>
+
+
+
+

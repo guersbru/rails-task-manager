@@ -1,0 +1,17 @@
+
+<%= form_for(@task) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :doer %>
+  <%= f.text_field :doer %>
+
+  <%= f.label :priority %>
+  <%= f.text_field :priority %>
+
+  <%= f.label :duedate %>
+  <%= f.text_field :duedate %>
+
+  <%= f.submit %>
+<% end %>
+
